@@ -1,0 +1,28 @@
+.Header {
+    width: 100%;
+    height: 5rem;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5f048a;
+  }
+  
+  .Header h1 {
+    color: white;
+  }
+  
+  .Header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Header button {
+      padding: 10px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: white;
+      font-size: 16px;
+      letter-spacing: 1.5px;
+  }

@@ -1,0 +1,18 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    height: 35vh;
+    width: 30%;
+}
+
+.Label {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 10px;
+    font-size: 20px;
+}
