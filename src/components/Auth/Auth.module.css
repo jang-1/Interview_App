@@ -29,7 +29,8 @@
 }
 
 .Label input:focus {
-    border: 1px solid #5f048a;
+    border: 2px solid #5f048a;
+    outline: none;
 }
 
 .Button {
@@ -40,4 +41,15 @@
     font-size: 16px;
     color: white;
     margin-top: 10px;
+    transition: 250ms all ease;
+    cursor: pointer;
+}
+
+.Button:hover {
+    background-color: #970bd8;
+}
+
+.Error {
+    color: red;
+    font-size: 12px;
 }
