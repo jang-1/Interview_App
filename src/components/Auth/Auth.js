@@ -5,13 +5,14 @@ const Auth = () => {
     return (
         <form className={classes.Form}>
             <label className={classes.Label}>
-                Email:
+                EMAIL
                 <input/>
             </label>
             <label className={classes.Label}>
-                Password:
+                PASSWORD
                 <input/>
             </label>
+            <button className={classes.Button} type="submit">Login</button>
         </form>
     )
 }

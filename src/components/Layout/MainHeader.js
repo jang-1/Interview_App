@@ -7,7 +7,7 @@ const MainHeader = (props) => {
       <nav>
         <ul>
           <li>
-            <button>Login</button>
+            {/* <button>Login</button> */}
           </li>
         </ul>
       </nav>
