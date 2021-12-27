@@ -1,4 +1,6 @@
-import React from 'react'
+import { useDispatch } from 'react-redux'
+import { authActions } from '../../store';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -6,6 +8,8 @@ import classes from './Auth.module.css'
 
 
 const Auth = () => {
+
+    const dispatch = useDispatch();
 
     const formik = useFormik({
         initialValues: {
@@ -23,8 +27,8 @@ const Auth = () => {
                   )
                 .required('Required'),
         }),
-        onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+        onSubmit: () => {
+          dispatch(authActions.login())
         },
       });
 
