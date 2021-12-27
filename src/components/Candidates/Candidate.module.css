@@ -6,6 +6,7 @@
     border-radius: 10px;
     height: 10vh;
     width: 100%;
+    cursor: pointer;
 }
 
 .Container {
@@ -20,6 +21,16 @@
     margin: 5px;
 }
 
+.Name {
+    padding: 5px;
+}
+
+.PrimarySkill {
+    border: 1px solid rgb(157, 143, 172);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
 .Container ul {
     display: flex;
     width: 80%;
@@ -29,4 +40,7 @@
 
 .Container li {
     list-style: none;
+    border: 1px solid rgb(157, 143, 172);
+    border-radius: 5px;
+    padding: 5px 10px;
 }

@@ -4,5 +4,37 @@
     justify-content: space-around;
     align-items: center;
     width: 60%;
-    height: 80%;
+    height: 70%;
 }
+
+.PaginationButtons {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .PaginationButtons a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #5f048a;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .PaginationButtons a:hover {
+    color: white;
+    background-color: #5f048a;
+  }
+  
+  .PaginationActive a {
+    color: white;
+    background-color: #5f048a;
+  }
+  
+  .PaginationDisabled a {
+    color: white;
+    background-color: rgb(37, 4, 63);
+  }

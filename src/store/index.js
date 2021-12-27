@@ -49,7 +49,48 @@ const initialCandidatesState = {
             primarySkill: 'jQuery',
             moreSkills: ['ReactJS', 'NodeJS', 'C#']
         },
-
+        {
+            id:5,
+            firstName: 'Ferne',
+            lastName: 'King',
+            primarySkill: 'jQuery',
+            moreSkills: ['ReactJS', 'NodeJS', 'C#']
+        },
+        {
+            id:6,
+            firstName: 'Maleeha ',
+            lastName: 'Lake',
+            primarySkill: 'jQuery',
+            moreSkills: ['ReactJS', 'NodeJS', 'C#']
+        },
+        {
+            id:7,
+            firstName: 'Agnes ',
+            lastName: 'Padilla',
+            primarySkill: 'jQuery',
+            moreSkills: ['ReactJS', 'NodeJS', 'C#']
+        },
+        {
+            id:8,
+            firstName: 'Scarlett ',
+            lastName: 'Fischer',
+            primarySkill: 'jQuery',
+            moreSkills: ['ReactJS', 'NodeJS', 'C#']
+        },
+        {
+            id:9,
+            firstName: 'Chay',
+            lastName: 'Flores',
+            primarySkill: 'jQuery',
+            moreSkills: ['ReactJS', 'NodeJS', 'C#']
+        },
+        {
+            id:10,
+            firstName: 'Annaliese ',
+            lastName: 'Hull',
+            primarySkill: 'jQuery',
+            moreSkills: ['ReactJS', 'NodeJS', 'C#']
+        },
     ]
 }
 

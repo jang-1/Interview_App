@@ -12,11 +12,11 @@ const Candidate = ({firstName, lastName, primarySkill, moreSkills}) => {
         <div className={classes.Candidate}>
             <div className={classes.Container}>
                 <h2>First Name and Last Name:</h2>
-                <div>{firstName} {lastName}</div>
+                <div className={classes.Name}>{firstName} {lastName}</div>
             </div>
             <div className={classes.Container}>
                 <h2>Primary Skill:</h2>
-                <div>{primarySkill}</div>
+                <div className={classes.PrimarySkill}>{primarySkill}</div>
             </div>
             <div className={classes.Container}>
                 <h2>More Skills:</h2>
