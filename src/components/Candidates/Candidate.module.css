@@ -1,0 +1,32 @@
+.Candidate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(237, 224, 245);
+    border-radius: 10px;
+    height: 10vh;
+    width: 100%;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.Container h2 {
+    margin: 5px;
+}
+
+.Container ul {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    flex: 2;
+}
+
+.Container li {
+    list-style: none;
+}
