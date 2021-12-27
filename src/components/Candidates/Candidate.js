@@ -5,7 +5,7 @@ import classes from "./Candidate.module.css"
 const Candidate = ({firstName, lastName, primarySkill, moreSkills}) => {
 
     const listOfSkills = moreSkills.map((skill,i) => (
-            <li>{skill}</li>
+            <li key={i}>{skill}</li>
     ))
 
     return (
