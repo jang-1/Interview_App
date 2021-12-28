@@ -21,7 +21,7 @@ const Candidates = () => {
   
     const displayCandidates = candidates
         .filter(candidate => {
-            if(search == ""){
+            if(search === ""){
                 return candidate
             } else if (
                 candidate.firstName.toLowerCase().includes(search.toLowerCase()) 
@@ -31,14 +31,16 @@ const Candidates = () => {
             }
         })
         .slice(visitedPages, visitedPages + candidatesPerPage)
-        .map((candidate) =>
+        .map((candidate) =>(
         <Candidate
             key={candidate.id}
+            id={candidate.id}
             firstName={candidate.firstName} 
             lastName={candidate.lastName} 
             primarySkill={candidate.primarySkill} 
             moreSkills={candidate.moreSkills} 
         />
+        )
      );
 
      const pageCount = Math.ceil(candidates.length / candidatesPerPage);

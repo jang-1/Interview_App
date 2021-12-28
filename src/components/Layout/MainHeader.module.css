@@ -10,6 +10,7 @@
   
   .Header h1 {
     color: white;
+    cursor: pointer;
   }
   
   .Header ul {

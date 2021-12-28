@@ -1,15 +1,22 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import classes from "./Candidate.module.css"
 
-const Candidate = ({firstName, lastName, primarySkill, moreSkills}) => {
+const Candidate = ({id, firstName, lastName, primarySkill, moreSkills}) => {
+
+    const navigate = useNavigate();
 
     const listOfSkills = moreSkills.map((skill,i) => (
             <li key={i}>{skill}</li>
     ))
 
+    const moveToProfileHandler = () => {
+        navigate(`/${id}`, {replace: true})
+    }
+
     return (
-        <div className={classes.Candidate}>
+        <div className={classes.Candidate} onClick={moveToProfileHandler}>
             <div className={classes.Container}>
                 <h2>First Name and Last Name:</h2>
                 <div className={classes.Name}>{firstName} {lastName}</div>
