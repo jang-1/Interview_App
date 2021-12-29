@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 
 import {useSelector} from "react-redux"
@@ -19,7 +20,7 @@ const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
       <Layout>
         <Routes>
           <Route path="/" element={isAuthenticated ? <Candidates/> : <Auth/>}/>
-          <Route path="/:candidateProfile" element={<CandidateProfile />}/>
+          <Route path="/:candidateProfile" element={isAuthenticated ? <CandidateProfile /> : <Navigate to="/"/>}/>
         </Routes>
       </Layout>
     </Router>

@@ -14,7 +14,12 @@
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  transition: 250ms all linear;
+}
+
+.SearchBar:focus {
+  outline: none;
+  border: 3px solid #5f048a;
 }
 
 .PaginationButtons {
@@ -45,6 +50,6 @@
   }
   
   .PaginationDisabled a {
-    color: white;
+    color: rgb(246, 246, 246);
     background-color: rgb(37, 4, 63);
   }
