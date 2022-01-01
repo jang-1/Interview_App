@@ -18,18 +18,21 @@ const Candidates = () => {
     const inputChangeHandler = (event) => {
         setSearch(event.target.value)
     }
+
+    const filteredCandidates = candidates
+    .filter(candidate => {
+        if(search === ""){
+            return candidate
+        } else if (
+            candidate.firstName.toLowerCase().includes(search.toLowerCase()) 
+        ||  candidate.lastName.toLowerCase().includes(search.toLowerCase())
+        ||  candidate.primarySkill.toLowerCase().includes(search.toLowerCase()) ){
+            return candidate
+        } 
+    })
   
-    const displayCandidates = candidates
-        .filter(candidate => {
-            if(search === ""){
-                return candidate
-            } else if (
-                candidate.firstName.toLowerCase().includes(search.toLowerCase()) 
-            ||  candidate.lastName.toLowerCase().includes(search.toLowerCase())
-            ||  candidate.primarySkill.toLowerCase().includes(search.toLowerCase()) ){
-                return candidate
-            }
-        })
+    const displayCandidates =
+        filteredCandidates
         .slice(visitedPages, visitedPages + candidatesPerPage)
         .map((candidate) =>(
         <Candidate
@@ -43,10 +46,11 @@ const Candidates = () => {
         )
      );
 
-     const pageCount = Math.ceil(candidates.length / candidatesPerPage);
+     const pageCount = Math.ceil(filteredCandidates.length / candidatesPerPage);
      const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
+
 
     return (
         <div className={classes.Candidates}>
