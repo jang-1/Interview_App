@@ -26,7 +26,7 @@ const initialCandidatesState = {
             firstName: 'John',
             lastName: 'Doe',
             primarySkill: 'ReactJS',
-            moreSkills: ['NodeJs', 'jQuery', 'Java'],
+            moreSkills: ['NodeJS', 'jQuery', 'Java'],
             dateOfBirth: "21.09.1990",
             hobby: "sport, music, art",
             education: "UJ",
@@ -39,7 +39,7 @@ const initialCandidatesState = {
             firstName: 'Matthew',
             lastName: 'Nowak',
             primarySkill: 'VueJS',
-            moreSkills: ['NodeJs', 'SQL', 'C'],
+            moreSkills: ['NodeJS', 'SQL', 'C'],
             dateOfBirth: "21.09.1991",
             hobby: "sport, music, photography",
             education: "UJ",
@@ -160,10 +160,88 @@ const candidatesSlice = createSlice({
     reducers: {}
 })
 
+const initialQuestionsState = {
+    questions: [
+        {
+            id:1,
+            skill: "ReactJS",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:2,
+            skill: "AngularJS",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:3,
+            skill: "VueJS",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:4,
+            skill: "jQuery",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:5,
+            skill: "NodeJS",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:6,
+            skill: "SQL",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:7,
+            skill: "C",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:8,
+            skill: "C++",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:9,
+            skill: "C#",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:10,
+            skill: "Python",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+        {
+            id:11,
+            skill: "Java",
+            questions: ["1","2","3","4","5"],
+            tips: ["1","2","3","4","5"]
+        },
+    ]
+}
+
+const questionsSlice = createSlice({
+    name: 'questions',
+    initialState: initialQuestionsState,
+    reducers: {}
+})
+
 const store = configureStore({
     reducer: {
       auth: authSlice.reducer,
-      candidates: candidatesSlice.reducer,  
+      candidates: candidatesSlice.reducer,
+      questions: questionsSlice.reducer,  
     } 
     
 })

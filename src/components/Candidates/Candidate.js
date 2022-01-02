@@ -18,7 +18,7 @@ const Candidate = ({id, firstName, lastName, primarySkill, moreSkills}) => {
     return (
         <div className={classes.Candidate} onClick={moveToProfileHandler}>
             <div className={classes.Container}>
-                <h2>First Name and Last Name:</h2>
+                <h2>Full Name:</h2>
                 <div className={classes.Name}>{firstName} {lastName}</div>
             </div>
             <div className={classes.Container}>

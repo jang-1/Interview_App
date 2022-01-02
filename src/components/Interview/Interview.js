@@ -10,7 +10,7 @@ const Interview = () => {
     const navigate = useNavigate();
     const params = useParams()
 
-    const [selectSkills, setSelectSkills] = useState([])
+    const [selectedSkills, setSelectedSkills] = useState([])
 
     const candidates = useSelector(state => state.candidates.candidates)
     const skills = [...candidates[state - 1].moreSkills];
@@ -18,17 +18,17 @@ const Interview = () => {
     skills.unshift(primarySkill)
 
     const selectHandler = (e) => {
-        const tempArr = [...selectSkills];
+        const tempArr = [...selectedSkills];
         const name = e.target.name
         const checked = e.target.checked;
 
         if(tempArr.includes(name) && !checked) {
             const index = tempArr.indexOf(name)
             tempArr.splice(index, 1)
-            setSelectSkills(tempArr)
+            setSelectedSkills(tempArr)
         }  else {
             tempArr.push(name)
-            setSelectSkills(tempArr)
+            setSelectedSkills(tempArr)
         }
     }
 
@@ -41,21 +41,21 @@ const Interview = () => {
     })
 
     const submitHandler = () => {
-        if(selectSkills.length === 0) {
+        if(selectedSkills.length === 0) {
             alert("You have to select skills")
             return
         } else {
-            navigate(`/${params.candidateProfile}/interview/questions`, {state:selectSkills })
+            navigate(`/${params.candidateProfile}/interview/questions`, {state:selectedSkills })
         }
 
     }
 
     return (
-        <ul className={classes.Interview}>
+        <div className={classes.Interview}>
             <h1>Select skills:</h1>
             {allSkills}
             <button className={classes.Submit} onClick={submitHandler}>Submit</button>
-        </ul>
+        </div>
     )
 }
 

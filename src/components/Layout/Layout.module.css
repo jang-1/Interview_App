@@ -1,9 +1,10 @@
 .Main {
-    height: calc(100vh - 5rem);
+    top: 5rem;
+    min-height: calc(100vh - 5rem);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: rgb(49, 47, 47);
 }
