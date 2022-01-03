@@ -157,7 +157,11 @@ const initialCandidatesState = {
 const candidatesSlice = createSlice({
     name: 'candidates',
     initialState: initialCandidatesState,
-    reducers: {}
+    reducers: {
+        add(state, action) {
+            state.candidates.push(action.payload)
+        },
+    }
 })
 
 const initialQuestionsState = {
@@ -234,7 +238,11 @@ const initialQuestionsState = {
 const questionsSlice = createSlice({
     name: 'questions',
     initialState: initialQuestionsState,
-    reducers: {}
+    reducers: {
+        add(state, action) {
+            state.questions.push(action.payload)
+        },
+    }
 })
 
 const store = configureStore({
@@ -247,4 +255,6 @@ const store = configureStore({
 })
 
 export const authActions = authSlice.actions
+export const candidatesActions = candidatesSlice.actions
+export const questionsActions = questionsSlice.actions
 export default store;

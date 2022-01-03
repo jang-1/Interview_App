@@ -5,9 +5,11 @@ import Candidate from './Candidate'
 import ReactPaginate from "react-paginate";
 
 import classes from "./Candidates.module.css"
+import { useNavigate } from 'react-router-dom';
 
 const Candidates = () => {
-    const candidates = useSelector(state => state.candidates.candidates)
+    const candidates = useSelector(state => state.candidates.candidates);
+    const navigate = useNavigate()
 
     const [search, setSearch] = useState("")
     const [pageNumber, setPageNumber] = useState(0);
@@ -51,15 +53,22 @@ const Candidates = () => {
         setPageNumber(selected);
     };
 
+    const addHandler = () => {
+        navigate("/addCandidate")
+    }
+
 
     return (
         <div className={classes.Candidates}>
-            <input
-                className={classes.SearchBar}
-                type="text"
-                placeholder='Search...'
-                onChange={inputChangeHandler}
-            />
+            <div className={classes.Container}>
+                <button className={classes.Button} onClick={addHandler}>Add Candidate</button>
+                <input
+                    className={classes.SearchBar}
+                    type="text"
+                    placeholder='Search...'
+                    onChange={inputChangeHandler}
+                />
+            </div>
             {displayCandidates}
             <ReactPaginate
                 previousLabel={"Previous"}

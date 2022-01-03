@@ -5,6 +5,8 @@ import CandidateProfile from './components/Candidates/CandidateProfile';
 import Interview from './components/Interview/Interview';
 import Questions from './components/Interview/Questions';
 import PreparationTime from './components/Interview/PreparationTime';
+import Summary from './components/Interview/Summary';
+import AddCandidate from './components/Candidates/AddCandidate';
 
 
 import {
@@ -26,10 +28,12 @@ const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
       <Layout>
         <Routes>
           <Route path="/" element={isAuthenticated ? <Candidates/> : <Auth/>}/>
+          <Route path="/addCandidate" element={isAuthenticated ? <AddCandidate/> :  <Navigate to="/"/>}/>
           <Route path="/:candidateProfile" element={isAuthenticated ? <CandidateProfile /> : <Navigate to="/"/>}/>
           <Route path="/:candidateProfile/interview" element={isAuthenticated ? <Interview /> : <Navigate to="/"/>}/>
           <Route path="/:candidateProfile/interview/questions" element={isAuthenticated ? <Questions /> : <Navigate to="/"/>}/>
           <Route path="/:candidateProfile/interview/questions/preparationTime" element={isAuthenticated ? <PreparationTime /> : <Navigate to="/"/>}/>
+          <Route path="/summary" element={isAuthenticated ? <Summary /> : <Navigate to="/"/>}/>
         </Routes>
       </Layout>
     </Router>

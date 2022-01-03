@@ -1,0 +1,31 @@
+.Summary {
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.SkillsContainer {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Summary ul{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.Summary li {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
