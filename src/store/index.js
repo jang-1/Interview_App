@@ -169,68 +169,68 @@ const initialQuestionsState = {
         {
             id:1,
             skill: "ReactJS",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["ReactJS1","ReactJS2","ReactJS3","ReactJS4","ReactJS5"],
+            answers: ["ReactJS1","ReactJS2","ReactJS3","ReactJS4","ReactJS5"]
         },
         {
             id:2,
             skill: "AngularJS",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["AngularJS1","AngularJS2","AngularJS3","AngularJS4","AngularJS5"],
+            answers: ["AngularJS1","AngularJS2","AngularJS3","AngularJS4","AngularJS5"]
         },
         {
             id:3,
             skill: "VueJS",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["VueJS1","VueJS2","VueJS3","VueJS4","VueJS5"],
+            answers: ["VueJS1","VueJS2","VueJS3","VueJS4","VueJS5"]
         },
         {
             id:4,
             skill: "jQuery",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["jQuery1","jQuery2","jQuery3","jQuery4","jQuery5"],
+            answers: ["jQuery1","jQuery2","jQuery3","jQuery4","jQuery5"]
         },
         {
             id:5,
             skill: "NodeJS",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["NodeJS1","NodeJS2","NodeJS3","NodeJS4","NodeJS5"],
+            answers: ["NodeJS1","NodeJS2","NodeJS3","NodeJS4","NodeJS5"]
         },
         {
             id:6,
             skill: "SQL",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["SQL1","SQL2","SQL3","SQL4","SQL5"],
+            answers: ["SQL1","SQL2","SQL3","SQL4","SQL5"]
         },
         {
             id:7,
             skill: "C",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["C1","C2","C3","C4","C5"],
+            answers: ["C1","C2","C3","C4","C5"]
         },
         {
             id:8,
             skill: "C++",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["C++1","C++2","C++3","C++4","C++5"],
+            answers: ["C++1","C++2","C++3","C++4","C++5"]
         },
         {
             id:9,
             skill: "C#",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["C#1","C#2","C#3","C#4","C#5"],
+            answers: ["C#1","C#2","C#3","C#4","C#5"]
         },
         {
             id:10,
             skill: "Python",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["Python1","Python2","Python3","Python4","Python5"],
+            answers: ["Python1","Python2","Python3","Python4","Python5"]
         },
         {
             id:11,
             skill: "Java",
-            questions: ["1","2","3","4","5"],
-            tips: ["1","2","3","4","5"]
+            questions: ["Java1","Java2","Java3","Java4","Java5"],
+            answers: ["Java1","Java2","Java3","Java4","Java5"]
         },
     ]
 }

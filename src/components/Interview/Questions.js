@@ -26,25 +26,29 @@ const Questions = () => {
                     answer: item.tips[i]
                 })
             })
-            // const current = {
-            //     questions: item.questions,
-            //     answers: item.tips
-            // }
             tempArr.push(item.questions)
         }
     })
 
     const selectHandler = (e) => {
         const tempArr = [...selectedQuestions];
-        const name = e.target.name
+        const question = e.target.name
+        console.log("target answer: ", e.target.getAttribute("answer"))
         const selectedQuestion = {
             question: e.target.name,
-            answer: e.target.answer
+            answer: e.target.getAttribute("answer"),
+            candidateAnswer: null
         }
         const checked = e.target.checked;
 
-        if(tempArr.includes(name) && !checked) {
-            const index = tempArr.indexOf(name)
+        if(tempArr.some((element)=>{
+            if(element.question === question){
+                return true
+            }
+        }) && !checked) {
+            const index = tempArr.findIndex((elem)=>{
+                return elem.question === question
+            })
             tempArr.splice(index, 1)
             setSelectedQuestions(tempArr)
         }  else {
@@ -53,13 +57,16 @@ const Questions = () => {
         }
     }
     
-    console.log("test tempArr: ", tempArr)
+    
     console.log("test questionsWithAnswers: ", questionsWithAnswers)
-    const questionList = questionsWithAnswers.map((current, index) => ( 
+    const questionList = questionsWithAnswers.map((current, index) => {
+        
+        return(
                 <label className={classes.Item}  key={index+1}>{current.question}
                     <input type="checkbox" name={current.question} answer={current.answer} onChange={selectHandler} />
                 </label>
-    ))
+        )
+        })
 
         const submitHandler = () => {
             if(selectedQuestions.length === 0) {

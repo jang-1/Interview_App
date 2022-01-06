@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useLocation } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
 
 import classes from './Summary.module.css'
+
 
 
 const Summary = () => {
@@ -12,23 +13,38 @@ const Summary = () => {
 
     const selectedSkills = state.state.selectedSkills
     const selectedQuestions = state.state.selectedQuestions
+    const [selectedQuestionsState, setSelectedQuestionsState] = useState(selectedQuestions)
+    console.log("summary selectedQuestions: ", selectedQuestions)
 
-    const questions = useSelector(state => state.questions.questions)
+    const [badAnswers, setBadAnswersCounter] = useState(0)
+    const [notFullyAnswers, setNotFullyAnswers] = useState(0)
+    const [goodAnswers, setGoodAnswers] = useState(0)
+    const [veryGoodAnswers, setVeryGoodAnswers] = useState(0)
 
-    const items = questions.map((question) => {
-        if(selectedSkills.includes(question.skill)) {
-            return (
-                <div>
-                    {question.skill}
-                    {selectedQuestions.every(r => question.questions.includes(r)) ? <li>{selectedQuestions}</li>: null}
-                    {/* {question.tips.map(item =><li>{item}</li> )} */}
-                </div>
-            )
-        }
 
-        
-    })
+
+    const clickHandeler = (ans, index)=>{
+        //update candidate answer
+    }
+
+
+    console.log(badAnswers);
     const skills = selectedSkills.map((skill,index) => <li key={index}>{skill}</li>)
+    const questionAnswerElements = selectedQuestionsState.map((current,index) => {
+        return (
+            <div key={index} className={classes.Container}>
+                <p>{current.question}</p>
+                <p>{current.answer}</p>
+                <div className={classes.ButtonContainer}>
+                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Bad answer</button>
+                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Not fully understand this answer</button>
+                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Good answer</button>
+                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Very good answer</button>
+                </div>
+            </div>
+        )
+    })
+
 
     return (
         <div className={classes.Summary}>
@@ -36,6 +52,7 @@ const Summary = () => {
                 <h1>Selected skills:</h1>
                 <ul>{skills}</ul>
             </div>   
+            {questionAnswerElements}
         </div>
     )
 }

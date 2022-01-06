@@ -34,7 +34,7 @@ const AddCandidate = () => {
                 .required('Required'),
             moreSkills: Yup.array()
                 .required('Required'),
-            dateOfBirth: Yup.string()
+            dateOfBirth: Yup.date()
                 .required('Required'),
             hobby: Yup.string()
                 .required('Required'),   
@@ -91,31 +91,19 @@ const AddCandidate = () => {
 
             <label className={classes.Label}>
                 Primary Skill
-                {/* <input
-                    name="primarySkill"
-                    type="text"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.primarySkill}
-                />
-                {formik.touched.primarySkill && formik.errors.primarySkill
-                ? (<div className={classes.Error}>{formik.errors.primarySkill}</div>)
-                : null} */}
                 <select 
                     name="primarySkill"
                     id="primarySkill"
                     value={formik.values.primarySkill}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
+                    className={classes.PrimarySkill}
                     >
-
-                <option value="">--Please choose an option--</option>
                     <option value="ReactJS">React</option>
                     <option value="AgularJS">AgularJS</option>
                     <option value="VueJS">VueJs</option>
                     <option value="jQuery">jQuery</option>
                     <option value="NodeJS">NodeJS</option>
-                    <option value="SQL">SQL</option>
                     <option value="SQL">SQL</option>
                     <option value="C">C</option>
                     <option value="C++">C++</option>
@@ -130,13 +118,6 @@ const AddCandidate = () => {
             
             <label className={classes.Label}>
                 More skills
-                {/* <input
-                    name="moreSkills"
-                    type="text"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.moreSkills}
-                /> */}
                 <select 
                     name="moreSkills"
                     id="moreSkills"
@@ -152,7 +133,6 @@ const AddCandidate = () => {
                     <option value="jQuery">jQuery</option>
                     <option value="NodeJS">NodeJS</option>
                     <option value="SQL">SQL</option>
-                    <option value="SQL">SQL</option>
                     <option value="C">C</option>
                     <option value="C++">C++</option>
                     <option value="C#">C#</option>
@@ -166,9 +146,7 @@ const AddCandidate = () => {
             
             <label className={classes.Label}>
                 Date of Birth
-                <input
-                    name="dateOfBirth"
-                    type="text"
+                <input type="date" id="start" name="dateOfBirth"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.dateOfBirth}
