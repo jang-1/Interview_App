@@ -54,3 +54,17 @@
     color: red;
     font-size: 12px;
 }
+
+.MoreSkills {
+    width: 100%;
+    appearance:none;
+    border:1px solid #d2d2d2;
+    border-radius:1px;
+    font:13px "Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size:13px;
+    resize:none;
+    vertical-align:baseline;
+    text-align: center;
+    padding:9px 7px 9px 17px;
+    outline: none;
+}

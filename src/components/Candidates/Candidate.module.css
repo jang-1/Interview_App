@@ -4,7 +4,7 @@
     align-items: center;
     background-color: rgb(237, 224, 245);
     border-radius: 10px;
-    height: 10vh;
+    min-height: 10vh;
     width: 100%;
     cursor: pointer;
     transition: 250ms all ease;
@@ -40,7 +40,9 @@
     display: flex;
     width: 80%;
     justify-content: space-around;
+    flex-wrap: wrap;
     flex: 2;
+    margin: 5px;
 }
 
 .Container li {
@@ -48,4 +50,5 @@
     border: 1px solid rgb(157, 143, 172);
     border-radius: 5px;
     padding: 5px 10px;
+    margin: 5px;
 }

@@ -17,7 +17,7 @@ const AddCandidate = () => {
             firstName: '',
             lastName: '',
             primarySkill: '',
-            moreSkills: "ReactJS, NodeJS, AngularJS, Python, SQL, VueJS, C, C++, C#, Java, jQuery",
+            moreSkills: [],
             dateOfBirth: '01.01.2022',
             hobby: '',
             education: '',
@@ -32,7 +32,7 @@ const AddCandidate = () => {
                 .required('Required'),
             primarySkill: Yup.string()
                 .required('Required'),
-            moreSkills: Yup.string()
+            moreSkills: Yup.array()
                 .required('Required'),
             dateOfBirth: Yup.string()
                 .required('Required'),
@@ -54,10 +54,7 @@ const AddCandidate = () => {
                 id:candidates.length + 1,
             }
             const newCandidate = Object.assign(values,id);
-            const moreskills = values.moreSkills.trim().split(",")
-            values.moreSkills = moreskills
-
-            
+    
             dispatch(candidatesActions.add(newCandidate))
             alert("You add new candidate")
         },
@@ -94,7 +91,7 @@ const AddCandidate = () => {
 
             <label className={classes.Label}>
                 Primary Skill
-                <input
+                {/* <input
                     name="primarySkill"
                     type="text"
                     onChange={formik.handleChange}
@@ -103,18 +100,65 @@ const AddCandidate = () => {
                 />
                 {formik.touched.primarySkill && formik.errors.primarySkill
                 ? (<div className={classes.Error}>{formik.errors.primarySkill}</div>)
+                : null} */}
+                <select 
+                    name="primarySkill"
+                    id="primarySkill"
+                    value={formik.values.primarySkill}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    >
+
+                <option value="">--Please choose an option--</option>
+                    <option value="ReactJS">React</option>
+                    <option value="AgularJS">AgularJS</option>
+                    <option value="VueJS">VueJs</option>
+                    <option value="jQuery">jQuery</option>
+                    <option value="NodeJS">NodeJS</option>
+                    <option value="SQL">SQL</option>
+                    <option value="SQL">SQL</option>
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="C#">C#</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </select>
+                {formik.touched.primarySkill && formik.errors.primarySkill
+                ? (<div className={classes.Error}>{formik.errors.primarySkill}</div>)
                 : null}
             </label>
             
             <label className={classes.Label}>
                 More skills
-                <input
+                {/* <input
                     name="moreSkills"
                     type="text"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.moreSkills}
-                />
+                /> */}
+                <select 
+                    name="moreSkills"
+                    id="moreSkills"
+                    value={formik.values.moreSkills}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    multiple="multiple"
+                    className={classes.MoreSkills}
+                    >
+                    <option value="ReactJS">React</option>
+                    <option value="AgularJS">AgularJS</option>
+                    <option value="VueJS">VueJs</option>
+                    <option value="jQuery">jQuery</option>
+                    <option value="NodeJS">NodeJS</option>
+                    <option value="SQL">SQL</option>
+                    <option value="SQL">SQL</option>
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="C#">C#</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </select>
                 {formik.touched.moreSkills && formik.errors.moreSkills
                 ? (<div className={classes.Error}>{formik.errors.moreSkills}</div>)
                 : null}
