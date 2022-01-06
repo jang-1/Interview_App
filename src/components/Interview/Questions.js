@@ -16,16 +16,31 @@ const Questions = () => {
     const [selectedQuestions, setSelectedQuestions] = useState([])
 
     const tempArr = []
+    const questionsWithAnswers = []
     questions.forEach((item) => {
         if(item.skill === state[0] || item.skill === state[1] || item.skill === state[2] || item.skill === state[3]) {
+
+            item.questions.forEach((elem, i)=>{
+                questionsWithAnswers.push({
+                    question: elem,
+                    answer: item.tips[i]
+                })
+            })
+            // const current = {
+            //     questions: item.questions,
+            //     answers: item.tips
+            // }
             tempArr.push(item.questions)
         }
-        return tempArr
     })
 
     const selectHandler = (e) => {
         const tempArr = [...selectedQuestions];
         const name = e.target.name
+        const selectedQuestion = {
+            question: e.target.name,
+            answer: e.target.answer
+        }
         const checked = e.target.checked;
 
         if(tempArr.includes(name) && !checked) {
@@ -33,20 +48,18 @@ const Questions = () => {
             tempArr.splice(index, 1)
             setSelectedQuestions(tempArr)
         }  else {
-            tempArr.push(name)
+            tempArr.push(selectedQuestion)
             setSelectedQuestions(tempArr)
         }
     }
-
-    const questionList = tempArr.map((question,i) => (
-        question.map((item,index) => {  
-            return(   
-                <label className={classes.Item}  key={index+i+1}>{item}
-                    <input type="checkbox" name={item} onChange={selectHandler} />
+    
+    console.log("test tempArr: ", tempArr)
+    console.log("test questionsWithAnswers: ", questionsWithAnswers)
+    const questionList = questionsWithAnswers.map((current, index) => ( 
+                <label className={classes.Item}  key={index+1}>{current.question}
+                    <input type="checkbox" name={current.question} answer={current.answer} onChange={selectHandler} />
                 </label>
-            ) 
-        })
-        ))
+    ))
 
         const submitHandler = () => {
             if(selectedQuestions.length === 0) {
