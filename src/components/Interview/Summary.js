@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import {useLocation } from 'react-router-dom'
-
-import { useSelector } from 'react-redux'
+import {useLocation, useNavigate } from 'react-router-dom'
 
 import classes from './Summary.module.css'
 
@@ -10,25 +8,47 @@ import classes from './Summary.module.css'
 const Summary = () => {
     const {state} = useLocation()
 
+    const navigate = useNavigate()
+
 
     const selectedSkills = state.state.selectedSkills
     const selectedQuestions = state.state.selectedQuestions
     const [selectedQuestionsState, setSelectedQuestionsState] = useState(selectedQuestions)
-    console.log("summary selectedQuestions: ", selectedQuestions)
-
-    const [badAnswers, setBadAnswersCounter] = useState(0)
-    const [notFullyAnswers, setNotFullyAnswers] = useState(0)
-    const [goodAnswers, setGoodAnswers] = useState(0)
-    const [veryGoodAnswers, setVeryGoodAnswers] = useState(0)
 
 
+    const clickHandeler = (ans, index) => {
+        const selectedQuestionsTemp = [...selectedQuestionsState]
 
-    const clickHandeler = (ans, index)=>{
-        //update candidate answer
+        selectedQuestionsTemp[index].candidateAnswer = ans;
+        setSelectedQuestionsState(selectedQuestionsTemp)
     }
 
+    let badAnswersTemp = 0
+    let notFullyAnswersTemp = 0
+    let goodAnswersTemp = 0
+    let veryGoodAnswersTemp = 0
 
-    console.log(badAnswers);
+    selectedQuestionsState.forEach((current, i) => {
+        if(current.candidateAnswer === "Bad answer") {
+            badAnswersTemp++
+        } else if(current.candidateAnswer === "Not fully understand this answer"){
+            notFullyAnswersTemp++
+        } else if(current.candidateAnswer === "Good answer"){
+            goodAnswersTemp++
+        } else if(current.candidateAnswer === "Very good answer"){
+            veryGoodAnswersTemp++
+        }
+        
+    })
+
+   const result = {
+        badAnswers:badAnswersTemp,
+        notFullyAnswers:notFullyAnswersTemp,
+        goodAnswers:goodAnswersTemp,
+        veryGoodAnswers:veryGoodAnswersTemp,
+   }
+
+
     const skills = selectedSkills.map((skill,index) => <li key={index}>{skill}</li>)
     const questionAnswerElements = selectedQuestionsState.map((current,index) => {
         return (
@@ -36,14 +56,18 @@ const Summary = () => {
                 <p>{current.question}</p>
                 <p>{current.answer}</p>
                 <div className={classes.ButtonContainer}>
-                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Bad answer</button>
-                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Not fully understand this answer</button>
-                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Good answer</button>
-                    <button  onClick={(e)=>{clickHandeler("Bad answer", index)}}>Very good answer</button>
+                    <button  onClick={()=>{clickHandeler("Bad answer", index)}}>Bad answer</button>
+                    <button  onClick={()=>{clickHandeler("Not fully understand this answer", index)}}>Not fully understand this answer</button>
+                    <button  onClick={()=>{clickHandeler("Good answer", index)}}>Good answer</button>
+                    <button  onClick={()=>{clickHandeler("Very good answer", index)}}>Very good answer</button>
                 </div>
             </div>
         )
     })
+
+    const submitHandler = () => {
+        navigate('/summary/finalResult')
+    }
 
 
     return (
@@ -53,6 +77,7 @@ const Summary = () => {
                 <ul>{skills}</ul>
             </div>   
             {questionAnswerElements}
+            <button onClick={submitHandler}>Submit</button>
         </div>
     )
 }

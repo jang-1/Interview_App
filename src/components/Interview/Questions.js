@@ -15,7 +15,6 @@ const Questions = () => {
  
     const [selectedQuestions, setSelectedQuestions] = useState([])
 
-    const tempArr = []
     const questionsWithAnswers = []
     questions.forEach((item) => {
         if(item.skill === state[0] || item.skill === state[1] || item.skill === state[2] || item.skill === state[3]) {
@@ -23,17 +22,16 @@ const Questions = () => {
             item.questions.forEach((elem, i)=>{
                 questionsWithAnswers.push({
                     question: elem,
-                    answer: item.tips[i]
+                    answer: item.answers[i]
                 })
             })
-            tempArr.push(item.questions)
         }
     })
 
     const selectHandler = (e) => {
         const tempArr = [...selectedQuestions];
         const question = e.target.name
-        console.log("target answer: ", e.target.getAttribute("answer"))
+
         const selectedQuestion = {
             question: e.target.name,
             answer: e.target.getAttribute("answer"),
@@ -57,8 +55,6 @@ const Questions = () => {
         }
     }
     
-    
-    console.log("test questionsWithAnswers: ", questionsWithAnswers)
     const questionList = questionsWithAnswers.map((current, index) => {
         
         return(

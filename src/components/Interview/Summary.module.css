@@ -1,12 +1,14 @@
 .Summary {
     width: 60%;
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(237, 224, 245);
     border-radius: 5px;
+    padding: 20px;
+    margin: 30px 0;
 }
 
 .SkillsContainer {
@@ -32,7 +34,6 @@
 
 .Container{
     width: 90%;
-    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -42,10 +43,15 @@
     border-radius: 5px;
 }
 
+.Container p:first-child {
+    margin: 10px;
+}
+
 .ButtonContainer {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin: 20px;
 }
 
 .ButtonContainer button {
