@@ -14,7 +14,7 @@ const Candidates = () => {
     const [search, setSearch] = useState("")
     const [pageNumber, setPageNumber] = useState(0);
 
-    const candidatesPerPage = 2;
+    const candidatesPerPage = 4;
     const visitedPages = pageNumber * candidatesPerPage;
 
     const inputChangeHandler = (event) => {

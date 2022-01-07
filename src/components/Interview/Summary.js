@@ -77,7 +77,7 @@ const Summary = () => {
                 <ul>{skills}</ul>
             </div>   
             {questionAnswerElements}
-            <button onClick={submitHandler}>Submit</button>
+            <button className={classes.Submit} onClick={submitHandler}>Submit</button>
         </div>
     )
 }

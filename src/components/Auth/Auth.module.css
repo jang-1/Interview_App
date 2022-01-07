@@ -53,3 +53,23 @@
     color: red;
     font-size: 12px;
 }
+
+@media (max-width: 500px)  {
+    .Form {
+        height: 55vh;
+        width: 90%;
+    }
+    
+    .Label input {
+        height: 4vh;
+        width: 100%;
+    }
+      
+    .Button {
+        padding: 15px 40px;
+    }
+    
+    .Error {
+        font-size: 14px;
+    }
+}

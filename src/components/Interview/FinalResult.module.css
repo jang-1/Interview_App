@@ -75,3 +75,35 @@
         opacity: 1
     }
 }
+
+
+@media (max-width: 500px)  {
+    .ResultContainer { 
+        width: 90vw;
+        min-height: 65vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Result {
+        position: absolute;
+        top: 3vh
+    }
+    
+    .Container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 10px;
+        width: 100%;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+    
+    
+    .Button {
+        bottom: 1vh;
+    }
+    
+}

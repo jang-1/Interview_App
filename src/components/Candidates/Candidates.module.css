@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     width: 60%;
-    height: 70vh;
+    min-height: 70vh;
 }
 
 .Container {
@@ -59,6 +59,7 @@
     border: 1px solid #5f048a;
     color: white;
     cursor: pointer;
+    transition: 250ms all ease;
   }
   
   .PaginationButtons a:hover {
@@ -75,3 +76,32 @@
     color: rgb(246, 246, 246);
     background-color: rgb(37, 4, 63);
   }
+
+  @media (max-width: 500px)  {
+    .Candidates {
+      width: 80%;
+      min-height: 70vh;
+      margin: 50px 0;
+  }
+  
+  .Container {
+    width: 100vw;
+  }
+  
+  .Button {
+    width: 40%;
+    height: 50px;
+    font-size: 14px;
+  }
+  
+  .SearchBar {
+    width: 150px;
+    height: 50px;
+    font-size: 14px;
+  }
+  
+  .PaginationButtons {
+      width: 90%;
+      height: 40px;
+    }
+}

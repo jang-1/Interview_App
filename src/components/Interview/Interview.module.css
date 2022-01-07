@@ -38,3 +38,9 @@
     background-color: rgb(37, 4, 63);
     color: white;
 }
+
+@media (max-width: 500px)  {
+    .Interview {
+        width: 90vw;
+    }
+}

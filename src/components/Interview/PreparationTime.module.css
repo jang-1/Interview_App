@@ -20,3 +20,10 @@
     border-radius: 50%;
     font-size: 30px;
 }
+
+@media (max-width: 500px)  {
+    .PreparationTime {
+        width: 90vw;
+        height: 60vh;
+    }
+}

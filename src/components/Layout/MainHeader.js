@@ -20,13 +20,9 @@ const MainHeader = (props) => {
 
   return (
     <header className={classes.Header}>
-      <h1 onClick={backToCandidatesHandler}>Recruitment Project</h1>
+      <h1 onClick={backToCandidatesHandler}>Interview App</h1>
       <nav>
-        <ul>
-          <li>
             {isAuthenticated && <button onClick={logoutHandler}>Logout</button> }
-          </li>
-        </ul>
       </nav>
     </header>
   );

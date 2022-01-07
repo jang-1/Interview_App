@@ -41,3 +41,13 @@
     background-color: rgb(37, 4, 63);
     color: white;
 }
+
+@media (max-width: 500px)  {
+    .Questions {
+        min-width: 90vw;
+    }
+
+    .Item {
+        margin-top: 20px;
+    }
+}
