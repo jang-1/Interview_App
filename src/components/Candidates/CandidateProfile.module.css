@@ -112,9 +112,11 @@
     
     .InfoContainer label {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
         align-items: center;
-        flex-wrap: wrap;
+        width: 100%;
     }
     
     .MainContainer img {
@@ -134,7 +136,7 @@
     .Container label {
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 100%;
         justify-content: space-evenly;
         align-items: center;
     }

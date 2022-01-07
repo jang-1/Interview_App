@@ -99,6 +99,7 @@ const AddCandidate = () => {
                     onBlur={formik.handleBlur}
                     className={classes.PrimarySkill}
                     >
+                    <option value="">--Please choose an option--</option>   
                     <option value="ReactJS">React</option>
                     <option value="AgularJS">AgularJS</option>
                     <option value="VueJS">VueJs</option>
