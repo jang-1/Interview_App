@@ -66,7 +66,7 @@ const Summary = () => {
     })
 
     const submitHandler = () => {
-        navigate('/summary/finalResult')
+        navigate('/summary/finalResult', {state:result })
     }
 
 
