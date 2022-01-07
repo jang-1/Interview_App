@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Interview_App/static/css/main.c38865fd.css",
+    "main.js": "/Interview_App/static/js/main.92f9e2ce.js",
+    "static/js/787.748a9cbf.chunk.js": "/Interview_App/static/js/787.748a9cbf.chunk.js",
+    "static/media/user.png": "/Interview_App/static/media/user.2fda6558cd58b877e14f.png",
+    "index.html": "/Interview_App/index.html",
+    "main.c38865fd.css.map": "/Interview_App/static/css/main.c38865fd.css.map",
+    "main.92f9e2ce.js.map": "/Interview_App/static/js/main.92f9e2ce.js.map",
+    "787.748a9cbf.chunk.js.map": "/Interview_App/static/js/787.748a9cbf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c38865fd.css",
+    "static/js/main.92f9e2ce.js"
+  ]
+}
